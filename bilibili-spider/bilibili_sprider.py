@@ -22,7 +22,7 @@ browser = webdriver.Chrome(chrome_options=chrome_options,executable_path='D:\sof
 
 
 # 选取一个用户 获取其信息
-# browser.get('https://space.bilibili.com/50329118/fans/follow')
+browser.get('https://space.bilibili.com/50329118/fans/follow')
 
 
 # 获取关注页数
