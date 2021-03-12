@@ -108,7 +108,9 @@ def filterAvailableIps(ips,ava_ips):
 def getProxyIps():
     proxy_ips = []
     with open('bilibili-spider\\ip-pool.txt','r') as fil:
-        proxy_ips.append(fil.readline().strip())
+        for ipd in fil.readlines():
+            content = ipd.strip();
+            proxy_ips.append(content)
     return proxy_ips
 
 if __name__ == '__main__':

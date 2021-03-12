@@ -56,6 +56,7 @@ biliUserTab = biliUserDB.userInfo
 def getFollows(userId):
     ua = random.choice(userAgents)
     pi = random.choice(proxyIps)
+    
     resp = requests.get(following_url.format(userId,1),headers=header,proxies=proxy)
 
     if requests.codes.ok == resp.status_code:
@@ -109,10 +110,13 @@ def saveUserInfo(userId):
     ua = random.choice(userAgents)
     pi = random.choice(proxyIps)
 
+    time.sleep(2)
     resp = requests.get(user_info_url.format(userId),headers=header,proxies=proxy)
 
+    time.sleep(2)
     ua = random.choice(userAgents)
     pi = random.choice(proxyIps)
+
     response = requests.get(user_sta_url.format(userId),headers=header,proxies=proxy)
 
     if requests.codes.ok == resp.status_code and requests.codes.ok == response.status_code:
@@ -135,7 +139,8 @@ def saveUserInfo(userId):
             print('保存用户信息：{0}',userInfo)
         except Exception as e:
             print('插入用户{0}信息失败：{1}'.format(userId,e))
-
+    else:
+        getFollows(userId)
 
 
 if __name__ == '__main__':
