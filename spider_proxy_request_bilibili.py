@@ -57,6 +57,7 @@ def getFollows(userId):
     ua = random.choice(userAgents)
     pi = random.choice(proxyIps)
     
+    time.sleep(2)
     resp = requests.get(following_url.format(userId,1),headers=header,proxies=proxy)
 
     if requests.codes.ok == resp.status_code:
