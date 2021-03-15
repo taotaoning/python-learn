@@ -16,7 +16,7 @@ proxy_url='http://www.xiladaili.com/http/{0}/'
 # 读取头信息文件
 def getUserAget():
     list_agents=[]
-    with open('bilibili-spider\\user_agents.txt','r') as agents:
+    with open('user_agents.txt','r') as agents:
         for ua in agents.readlines():
             list_agents.append(ua.strip())
         return list_agents

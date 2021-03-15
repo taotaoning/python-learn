@@ -55,7 +55,7 @@ def getFollows(userId):
     proip = random.choice(proxyIps)
     proxy={
         'http': 'http://'+ proip,
-        # 'https': 'http://'+ proip
+        'https': 'http://'+ proip
     }
     header={
         'user-agent':random.choice(userAgents),
@@ -97,7 +97,7 @@ def parseRespToList(follow_ids,userId,pageNum,header,proxy):
     proip = random.choice(proxyIps)
     proxy={
         'http': 'http://'+ proip,
-        # 'https': 'http://'+ proip
+        'https': 'http://'+ proip
     }
     header={
         'user-agent':random.choice(userAgents),
@@ -119,7 +119,7 @@ def saveUserInfo(userId):
     proip = random.choice(proxyIps)
     proxy={
         'http': 'http://'+ proip,
-        # 'https': 'http://'+ proip
+        'https': 'http://'+ proip
     }
     header={
         'user-agent':random.choice(userAgents),
